@@ -6,7 +6,7 @@ rescue LoadError
   Bundler.setup
 end
 
-Bundler.require :default
+Bundler.require
 
 require 'yaml'
 require 'base64'
