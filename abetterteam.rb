@@ -1,9 +1,18 @@
-require 'rubygems'
-require 'sinatra'
-require 'haml'
+begin
+  require File.expand_path('../.bundle/environment', __FILE__)
+rescue LoadError
+  require 'rubygems'
+  require 'bundler'
+  Bundler.setup
+end
+
+Bundler.require :default
+
 require 'yaml'
 require 'base64'
 require 'enumerator'
+
+set :app_file, __FILE__
 
 helpers do
   def load_quiz
